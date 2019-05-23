@@ -1,0 +1,1414 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+/* Fonts */
+@font-face {
+	font-family: Dorispp;
+	src: url('font/dorisbr.ttf') format('truetype'),
+		 url('font/dorisbr.woff2') format('woff2'),
+         url('font/dorisbr.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: Bowlby;
+	src: url('font/bowlby.ttf') format('truetype'),
+		 url('font/bowlby.woff2') format('woff2'),
+         url('font/bowlby.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+	font-family: Dorispp, Helvetica, Arial, sans-serif;
+	background-image: url('img/rekolnet-footer-600.png'), radial-gradient(#08955C 60%, #056642);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: contain;
+}
+
+p {
+	font-size: 1.6rem;
+	color: #FFDE00;
+}
+p::selection, strong::selection, .special::selection {
+	color: #08955C;
+	background-color: #FFDE00;
+}
+
+a:link, a:visited, a:active {
+	color: #FFDE00;
+	text-decoration: none;
+}
+a:hover {
+	color: #D9C504;
+}
+
+figcaption {
+	display: none;
+}
+
+/* HEADER: logo */
+.header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	max-height: 120px;
+	height: 80%;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	z-index: 3;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+.logo {
+	position: relative;
+	max-height: 86px;
+	margin: auto;
+}
+.logo:hover {
+  	cursor: pointer;
+  	animation: shake .5s;
+}
+
+/* NAVIGATION - for mobile and tablets */
+/* NAV - menu with all links */
+.nav {
+	position: fixed;
+	display: block;
+  	top: 65px;
+  	left: 25%;
+  	width: 50%;
+  	height: 260px;
+  	z-index: 1;
+  	font-family: Bowlby;
+  	text-transform: uppercase;
+  	letter-spacing: .5px;
+  	background-color: #FFFFFF;
+  	border: 2px dashed #FFDE00;
+  	border-radius: 50%;
+  	transform: translateY(-500px);
+  	transition: .3s;
+}
+/* NAV - top extension for block */
+.nav::before {
+	content: '';
+	position: absolute;
+	top: -75px;
+	left: -2px;
+	width: 100%;
+	height: 200px;
+	background-color: #FFFFFF;
+	border: 2px dashed #FFDE00;
+	border-bottom: 0 solid transparent;
+}
+
+/* NAV - navigation links in unordered list */
+.nav-links {
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 0 0 50% 50%;
+	list-style: none; 
+}
+.nav-links li {
+	border-bottom: 2px dashed #FFDE00;
+}
+.nav-links li a {
+	display: block;
+	width: 100%;
+	padding: 12px;
+	font-size: 1.6rem;
+	text-align: center;
+	color: #00955D;
+}
+.nav-links li a:hover {
+ 	color: rgba(0,149,93,.7);
+ 	background-color: #FFDE00;
+}
+.nav .nav-links li:nth-child(5) {
+	border-bottom: 0;
+}
+
+/* NAV block with hamburger */
+.nav-block {
+	position: fixed;
+	display: block;
+	z-index: 1;
+	top: -75px;
+	left: 25%;
+	width: 50%;
+	height: 150px;
+	background-color: #FFFFFF;
+	border-radius: 50%;
+}
+
+/* NAV block - hamburger */
+.hamburger {
+	position: relative;
+	display: block;
+	z-index: 2;
+	top: 95px;
+	left: 45%;
+	height: 30px;
+	width: 30px;
+	border: 4px solid #FFDE00;
+	border-left: 0;
+	border-right: 0;
+	cursor: pointer;
+	filter: drop-shadow(1px 1px 2px #AA9B15);
+	-webkit-filter: drop-shadow(1px 1px 2px #AA9B15);
+}
+/* NAV block - hamburger - center element */
+.hamburger::before {
+	content: '';
+	position: absolute;	
+	top: 9px;
+	left: 0;
+	width: 30px;
+	height: 4px;
+	background-color: #FFDE00;
+}
+/* NAV block - close button */
+.close {
+	position: relative;
+	top: 95px;
+	left: 45%;
+	width: 30px;
+	height: 30px;
+	border: 4px solid #FFDE00;
+	border-radius: 50%;
+	display: none;
+	cursor: pointer;
+	filter: drop-shadow(1px 1px 2px #AA9B15);
+	-webkit-filter: drop-shadow(1px 1px 2px #AA9B15);
+}
+/* NAV block - close button - center dot */
+.close::before {
+	content: '';
+	position: absolute;	
+	top: 6px;
+	left: 6px;
+	width: 2px;
+	height: 2px;
+	border: 4px solid #FFDE00;
+	border-radius: 50%;
+	background-color: #FFDE00;
+}
+
+/* CONTACT: icons for mobile */
+.contact-icon {
+	position: fixed;
+	z-index: 1;
+	filter: drop-shadow(1px 1px 2px #AA9B15);
+	-webkit-filter: drop-shadow(1px 1px 2px #AA9B15);
+}
+.contact-icon:hover {
+  	cursor: pointer;
+  	filter: drop-shadow(-2px -2px 2px #155B19);
+	-webkit-filter: drop-shadow(-2px -2px 2px #155B19);
+  	animation: shake .5s;
+}
+/* CONTACT: yellow mail and phone icons */
+.mail-contact {
+	top: 12px;
+	left: 5%;
+	width: 53px;
+	height: 47px;
+	margin-left: 7px;
+	background-image: url(img/icon-mail.svg);
+	background-repeat: no-repeat;
+}
+.phone-contact {
+	top: 10px;
+	right: 5%;
+	width: 38px;
+	height: 47px;
+	margin-right: 10px;
+	background-image: url(img/icon-phone.svg);
+	background-repeat: no-repeat;
+}
+
+/* 1. Section - About - Shape */
+.about {
+	position: relative;
+	max-width: 750px;
+	width: 70%;
+	margin: 130px auto 20px;
+	padding: 1% 2%;
+	border-right: dashed 5px rgba(255,222,0,.3);
+	border-left: dashed 5px rgba(255,222,0,.3);
+	border-radius: 5%;
+	background-image: linear-gradient(to bottom, #08955C 20%, #068556);
+	filter: drop-shadow(2px 2px 5px #155B19);
+	-webkit-filter: drop-shadow(2px 2px 5px #155B19);
+	text-align: center;
+	line-height: 2.3rem;
+}
+
+/* 1. Section - About - Text */
+.about p {
+	width: 90%;
+	margin: 15px auto;
+	color: #FFFFFF;
+	text-align: center;
+}
+.special, .about p:first-of-type strong {
+	font-family: Bowlby;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: .1rem;
+}
+
+/* Main for sections 2-4 */
+/* Speech bubbles - main attributes */
+.bubble {
+	position: relative;
+	text-align: center;
+    color: #00955D;
+	background-color: #FFFFFF;
+}
+
+/* Headings in speech bubbles */
+h1, h2, h3 {
+	font-family: Bowlby;
+    font-size: 2.7rem;
+    font-weight: normal;
+}
+h1::selection, h2::selection, h3::selection {
+	color: #08955C;
+	background-color: #FFDE00;
+}
+
+/* 2. Section - Woman Distributing*/
+.woman-distributing {
+	margin: auto;
+}
+/*Shape of the bubble */
+.speech-woman {
+	max-width: 250px;
+	width: 80%;
+    height: 120px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 100% 70%;
+}
+/*Tail of the bubble */
+.speech-woman::after {
+    content: "";
+    position: absolute;
+    display: block;
+    right: 50%;
+    bottom: -30px;
+	border-color: #FFFFFF transparent;
+    border-width: 40px 15px 0;
+    border-style: solid;
+    transform: rotate(0deg);
+}
+/* Heading in woman's speech bubble */
+.speech-woman h1 {
+	padding-top: 20px;
+    line-height: 3.3rem;
+}
+/*Text rotation in woman's speech bubble */
+#text-rotation-woman {
+	transform: rotate(-10deg);
+}
+/*Text shaking after in woman's speech bubble */
+#text-rotation-woman:hover {
+	transform: rotate(-10deg);
+	cursor: pointer;
+  	animation: shake-speech-bubble-woman .5s;
+}
+
+/* Image of woman */
+#woman-distributing-img {
+	max-height: 540px;
+	height: 60vw;
+	margin: 50px 35%;
+}
+
+/* Main text: the same woman & man */
+.text-woman, .text-man {
+	position: relative;
+	text-align: center;
+	font-size: 1.6rem;
+	line-height: 2.1rem;
+	color: #FFDE00;
+}
+.text-woman > p, .text-man > p {
+	width: 70%;
+	margin: 40px 15% 10px;
+}
+.text-woman .home {
+	margin-top: -30px;
+}
+/* Inner text: the same woman & man */
+.text-woman-in, .text-man-in {
+	position: relative;
+	width: 70%;
+	margin: 0 15% 110px;
+}
+.text-woman-in p, .text-man-in p {
+	padding: 10px;
+}
+.text-man-in {
+	margin-bottom: 95px;
+}
+
+/* All icons are putted in pseudo-elements */
+.text-woman p::before, .text-man p::before  {
+	content: '';
+	position: absolute;
+	background-repeat: no-repeat;
+	filter: drop-shadow(2px 2px 2px #155B19);
+	-webkit-filter: drop-shadow(2px 2px 2px #155B19);
+}
+/* On mobile pops are visible */
+.pop {
+	background-color: #068556;
+	border: dashed 2px rgba(255,222,0,.7);
+	border-radius: 5%;
+}
+.pop-up-text {
+	width: 90%;
+	margin: 0 5%;
+}
+/* Icons */
+.hand::before {
+	left: 45%;
+	width: 80px;
+	height: 65px;
+	margin-top: -60px;
+	background: url('img/icon-hand.svg');
+}
+.home::before {
+	left: 45%;
+	width: 57px;
+	height: 59px;
+	margin-top: -55px;
+	background: url('img/icon-home.svg');
+}
+.tower::before {
+	left: 45%;
+	width: 36px;
+	height: 83px;
+	margin-top: -90px;
+	margin-left: 12px;
+	background: url('img/icon-tower.svg');
+}
+
+/* Mailbox image */
+#mailbox-img {
+	position: relative;
+	max-height: 240px;
+	height: 40vw;
+	margin: -40px 35% 0;
+	filter: drop-shadow(3px 3px 3px #0F4A12);
+	-webkit-filter: drop-shadow(3px 3px 3px #0F4A12);
+}
+
+/* Flies in Section: Woman distributing at the end */
+.fly-container {
+	position: relative;
+	margin-bottom: 80px;
+}
+.fly {
+	width: 80px;
+	height: 40px;
+	font-family: Dorispp;
+	font-size: 1.9rem;
+	text-align: center;
+	line-height: 40px;
+	color: #146D4B;
+	background-color: #FFDE00;
+	filter: drop-shadow(2px 2px 2px #155B19);
+	-webkit-filter: drop-shadow(2px 2px 2px #155B19);
+}
+.fly:hover {
+	color: #00955D;
+	filter: drop-shadow(-2px -2px 2px #155B19);
+	-webkit-filter: drop-shadow(-2px -2px 2px #155B19);
+	cursor: pointer;
+}
+.fly::selection {
+	color: #FFFFFF;
+	background-color: #146D4B;
+}
+.gdansk {
+	position: relative;
+	margin-left: 10%;
+	transform: rotate(-30deg);
+}
+.sopot {
+	position: relative;
+	margin-left: 35%;
+	transform: rotate(-20deg);
+}
+.gdynia {
+	position: relative;
+	margin-top: -60px;
+	margin-left: 65%;
+	transform: rotate(20deg);
+}
+
+/* 3. Section - Man advertising */
+.man-advertising {
+	margin: auto;
+}
+.speech-man {
+	width: 60vw;
+    height: 100px;
+    margin: auto;
+    padding: 30px 14px;
+    line-height: 45px;
+    border-radius: 80% 30%;
+}
+
+.speech-man:after {
+    content: "";
+    position: absolute;
+    display: block;
+    right: 50%;
+    bottom: -30px;
+	border-color: #FFFFFF transparent;
+    border-width: 40px 15px 0;
+    border-style: solid;
+    transform: rotate(0deg);
+}
+
+/*Text rotation in man's speech bubble */
+#text-rotation-man {
+	transform: rotate(-8deg);
+	margin-left: -5px;
+}
+/*Text shaking after in man's speech bubble */
+#text-rotation-man:hover {
+	transform: rotate(-10deg);
+	cursor: pointer;
+  	animation: shake-speech-bubble-man-project .5s;
+}
+
+#man-advertising-img {
+	max-height: 540px;
+	height: 60vw;
+	margin: 50px 0 50px 25%;
+}
+/* Icons */
+.graduate::before {
+	left: 45%;
+	width: 70px;
+	height: 47px;
+	margin-top: -60px;
+	background: url('img/icon-graduate.svg');
+}
+.notebook::before {
+	left: 45%;
+	width: 43px;
+	height: 55px;
+	margin-top: -65px;
+	margin-left: 14px;
+	background: url('img/icon-notebook.svg');
+}
+.shop::before {
+	left: 45%;
+	width: 48px;
+	height: 47px;
+	margin-top: -60px;
+	margin-left: 12px;
+	background: url('img/icon-shop.svg');
+}
+.advertise::before {
+	left: 45%;
+	width: 35px;
+	height: 59px;
+	margin-top: -65px;
+	margin-left: 18px;
+	background: url('img/icon-vertise.svg');
+}
+.door::before {
+	left: 45%;
+	width: 47px;
+	height: 59px;
+	margin-top: -70px;
+	margin-left: 12px;
+	background: url('img/icon-door.svg');
+}
+.star::before {
+	left: 45%;
+	width: 54px;
+	height: 47px;
+	margin-top: -55px;
+	margin-left: 12px;
+	background: url('img/icon-star.svg');
+}
+
+/* 4. Section - Project */
+
+.speech-project {
+	max-width: 310px;
+	width: 70%;
+    height: 180px;
+    padding: 15px;
+    margin: 0 auto;
+    line-height: 3rem;
+    border-radius: 100% 70%;
+}
+.speech-project h3 {
+	font-size: 2.5rem;
+}
+
+/*Text rotation in project's speech bubble */
+#text-rotation-project {
+	transform: rotate(-8deg);
+	margin: 23px;
+}
+/*Text shaking after in project's speech bubble */
+#text-rotation-project:hover {
+	transform: rotate(-10deg);
+	cursor: pointer;
+  	animation: shake-speech-bubble-man-project .5s;
+}
+/* 5. Section - Contact */
+.section-contact {
+	margin-bottom: 50vw;
+}
+.contact-frame {
+	position: relative;
+    width: 90%;
+    margin: 80px auto 100px;
+    text-align: center;
+}
+#text-contact p {
+	font-family: bowlby;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	letter-spacing: .02rem;
+	font-style: normal;
+}
+.footer {
+	width:90%;
+	margin: auto;
+	margin-bottom: 10px;
+	text-align: center;
+	background-color: rgba(6,121,78,.6);
+	border-radius: 10%;
+	padding: 1%;
+}
+.footer p {
+	width: 90%;
+	margin: auto;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	color: #FFFFFF;
+}
+
+/* /////////////////////////////// 0 BREAKPOINT /////////////////////////////// */
+/* ////////////////// Especially for some elements /////////////////////////// */
+@media only screen and (max-width: 450px) {
+
+.nav {
+  	height: 220px;
+}
+.nav .nav-links li a {
+	font-size: 2.7vw;
+}
+.hamburger, .close {
+	left: 40%;
+}
+.about {
+	width: 95%;
+}
+.speech-woman h1 {
+	font-size: 7vw;
+}
+.text-woman > p, .text-man > p {
+	width: 90%;
+	margin: 40px 5% 10px 5%;
+}
+.text-woman-in, .text-man-in {
+	position: relative;
+	width: 90%;
+	margin: 0 5% 110px;
+}
+.speech-man h2 {
+	font-size: 5vw;
+}
+.speech-project h3 {
+	font-size: 5vw;
+}
+#text-contact p {
+	font-size: 5vw;
+}
+
+
+}
+
+/* ////////////////////////////// 1st BREAKPOINT ////////////////////////////// */
+/* ////// Small devices (portrait tablets and large phones, 600px and up) ///// */
+@media only screen and (min-width: 600px) {
+
+body {
+	background-image: url('img/rekolnet-footer-768.png'), radial-gradient(#08955C 60%, #056642);
+}
+
+.about {
+	margin-bottom: 140px;
+	padding: 10px;
+	border-radius: 10% 10% 25% 25%;
+}
+
+.about p:first-child {
+	width: 65%;
+}
+
+/* Headings in speech bubbles */
+h1, h2, h3 {
+    font-size: 3rem;
+ }
+
+.speech-woman {
+	width: 220px;
+    height: 100px;
+    margin-top: -100px;
+    margin-left: 20%;
+    padding: 15px;
+    box-sizing: content-box;
+}
+.speech-woman:after {
+    right: 50px;
+    bottom: -10px;
+    transform: rotate(-60deg);
+}
+.speech-woman h1 {
+	padding-top: 6px;
+	line-height: 3.5rem;
+}
+#text-rotation-woman {
+	margin-top: 19px;
+	transform: rotate(-10deg);
+}
+#text-rotation-woman:hover {
+	transform: rotate(-10deg);
+	cursor: pointer;
+  	animation: shake-speech-bubble-woman 0.5s;
+}
+/* Image of woman */
+#woman-distributing-img {
+	height: 80vw;
+	margin-top: -100px;
+	margin-left: 55%;
+}
+#woman-small-shape:before {
+	content: "";
+ 	position: absolute;
+ 	z-index: -1;
+ 	width: 60vw;
+ 	max-height: 420px;
+ 	height: 40vw;
+ 	margin: 0 25%;
+    border: dashed 5px rgba(255,222,0,.7);
+    background-color: #068556;
+    opacity: .5;
+    border-radius: 100% 70%;
+}
+
+#mailbox-img {
+	position: absolute;
+	width: 177px;
+	margin-top: -1000px;
+	margin-left: 15%;
+}
+
+/* Flies in Section: Woman distributing at the end */
+.fly-container {
+	width: 400px;
+	height: 200px;
+	margin: -1100px auto 0;
+}
+.gdansk {
+	position: relative;
+	margin-left: 20%;
+	transform: rotate(-10deg);
+}
+.sopot {
+	position: relative;
+	margin-top: 50px;
+	margin-left: 35%;
+	transform: rotate(-20deg);
+}
+.gdynia {
+	position: relative;
+	margin-top: 50px;
+	margin-left: 50%;
+	transform: rotate(-40deg);
+}
+
+.man-advertising {
+	max-width: 750px;
+	width: 90%;
+    height: 500px;
+	margin: auto;
+    border-radius: 100% 70%;
+}
+.speech-man {
+	width: 300px;
+    height: 50px;
+    margin-top: -20px;
+    box-sizing: content-box;
+}
+.speech-man:after {
+    content: "";
+    border-width: 60px 15px 0;
+    transform: rotate(20deg);
+}
+#text-rotation-man {
+	margin: 6px;
+	transform: rotate(-8deg);
+}
+#text-rotation-man:hover {
+	transform: rotate(-10deg);
+	cursor: pointer;
+  	animation: shake-speech-bubble-man-project .5s;
+}
+#man-small-shape:before {
+	content: "";
+ 	position: absolute;
+ 	z-index: -1;
+ 	width: 60vw;
+ 	max-height: 420px;
+ 	height: 40vw;
+ 	margin: 100px 25%;
+    border: dashed 5px rgba(255,222,0,.7);
+    background-color: #068556;
+    opacity: .5;
+    border-radius: 100% 70%;
+}
+
+.speech-project {
+	margin-top: 800px;
+}
+#text-rotation-project {
+	transform: rotate(-8deg);
+	margin: 23px;
+}
+#text-rotation-project:hover {
+	transform: rotate(-10deg);
+	cursor: pointer;
+  	animation: shake-speech-bubble-man-project .5s;
+}
+
+.section-woman, .section-man {
+	    margin-bottom: 900px;
+}
+.section-project {
+	    margin-top: 1350px;
+}
+
+.footer {
+	width: 80%;
+}
+.footer p {
+	font-size: 2rem;
+	line-height: 2.4rem;
+}
+
+
+}
+
+/* ////////////////////////////// 2nd BREAKPOINT ////////////////////////////// */
+/* //////////// Medium devices (landscape tablets, 768px and up) ///////////// */
+@media only screen and (min-width: 768px) {
+
+body {
+	background-image: url('img/rekolnet-footer-992.png'), radial-gradient(#08955C 60%, #056642);
+}
+
+/* NAVIGATION - for mobile and tablets - OFF */
+.nav-block, .nav {
+	display: none;
+}
+
+.special {
+	font-family: bowlby;
+	border: dashed 2px rgba(255,222,0,.7);
+	padding: 1px;
+	text-decoration: none;
+}
+
+.special:hover {
+	color: #00955D;
+	background-color: rgba(255,222,0,.7);
+	border-color: rgba(255,255,255,.5);
+	cursor: pointer;
+}
+
+.speech-woman {
+    margin-left: 30%;
+}
+.speech-woman h1 {
+	line-height: 3.6rem;
+}
+
+.gdansk {
+	margin-top: 150px;
+	margin-left: 10%;
+}
+.sopot {
+	margin-left: 25%;
+}
+.gdynia {
+	margin-left: 40%;
+}
+.section-contact {
+    margin-bottom: 55vw;
+}
+.contact-frame {
+    width: 500px;
+    height: 100px;
+    background-image: linear-gradient(to bottom, #08955C 20%, #068556);
+    border-right: dashed 5px rgba(255,222,0,.7);
+	border-left: dashed 5px rgba(255,222,0,.7);
+	border-radius: 10% 10% 25% 25%;
+	filter: drop-shadow(2px 2px 5px #155B19);
+	-webkit-filter: drop-shadow(2px 2px 5px #155B19);
+	line-height: 50px;
+}
+
+.section-project {
+	margin-top: 1400px;
+}
+
+.footer {
+	width: 70%;
+}
+
+
+} 
+
+/* ////////////////////////////// 2rd BREAKPOINT ////////////////////////////// */
+/* /////////////// Large devices (laptops/desktops, 992px and up) ///////////// */
+
+@media only screen and (min-width: 992px) {  
+
+body {
+	background-image: url('img/rekolnet-footer-1200.png'), radial-gradient(#08955C 40%, #056642);
+}
+
+p {
+	font-size: 2.2rem;
+	line-height: 2.5rem;
+}
+
+/* CONTACT: sidebar - changing the position and look from mobile contact */
+.contact {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 85px;
+	height: 160px;
+	margin-top: 120px;
+	background-color: #FFDE00;
+	text-align: center;
+	box-shadow: 8px 8px 8px #0D5B3E;
+	z-index: 3;
+}
+/* CONTACT: corner paper band - triangle */
+.contact::before {
+	content: "";
+	float: left;
+	margin-top: -40px;
+    width: 0;
+	height: 0;
+	border-bottom: 40px solid #AA9B15;
+	border-left: 40px solid transparent;
+}
+/* CONTACT: corner paper band - rectangle */
+.contact::after {
+	content: "";
+	float: right;
+	margin-top: -163px;
+	margin-right: -40px;
+    width: 85px;
+	height: 40px;
+	background-color: #FFDE00;
+}
+.contact-icon {
+	position: relative;
+	margin-right: -7px;
+	margin-top: 25px;
+}
+.contact-icon:hover {
+  	cursor: pointer;
+  	filter: drop-shadow(-2px -2px 2px #AA9B15);
+	-webkit-filter: drop-shadow(-2px -2px 2px #AA9B15);
+  	animation: shake .5s;
+}
+/* Green icons */
+.mail-contact {
+	height: 30px;
+	width: 43px;
+	margin-right: 0;
+	margin-bottom: 0;
+	background-image: url(img/icon-mail-.svg);
+	background-repeat: no-repeat;
+
+}
+.phone-contact {
+	height: 40px;
+	width: 43px;
+	margin-left: 30px;
+	margin-right: 0;
+	margin-bottom: 0;
+	background-image: url(img/icon-phone-.svg);
+	background-repeat: no-repeat;
+}
+.about {
+	margin-top: 160px;
+}
+
+.about p {
+	width: 85%;
+	font-size: 1.9rem;
+	line-height: 2.8rem;
+}
+
+/* Image of woman */
+#woman-distributing-img {
+	margin-top: -100px;
+	margin-left: 570px;
+}
+
+#woman-small-shape:before, #man-small-shape:before {
+	display: none;
+}
+
+.shape {
+	position: relative;
+	border: dashed 5px rgba(255,222,0,.7);
+	background-color: #068556;
+}
+
+.woman-distributing {
+	max-width: 600px;
+    width: 60%;
+    height: 420px;
+    border-radius: 100% 70%;
+}
+
+.speech-woman {
+	margin: -50px 290px;
+}
+.speech-woman:after {
+    right: -20px;
+    bottom: 30px;
+    transform: rotate(-60deg);
+}
+.speech-woman h1 {
+	padding-top: 0;
+	line-height: 3.6rem;
+}
+
+/* Pop-ups */
+.pop {
+	position: absolute;
+	display: none;
+	float: left;
+	font-size: 2rem;
+	line-height: 2.4rem;
+	border: dashed 5px rgba(255,222,0,.7);
+	border-radius: 50%;
+	background-color: #068556;
+	text-align: center;
+	animation: anim-pop .5s;
+}
+
+.text-woman {
+	margin-top: -430px;
+	margin-left: 90px;
+	text-align: left;
+}
+.text-woman > p {
+	width: 90%;
+	margin-top: -5px;
+	margin-bottom: -3px;
+	font-size: 2.3rem;
+	line-height: 3rem;
+}
+.text-woman > .hand {
+	margin-bottom: 60px;
+}
+.text-woman .home {
+	width: 60%;
+	margin-bottom: 30px;
+}
+.text-woman .tower {
+	width: 60%;
+}
+.text-woman-in {
+	margin-left: 1px;
+	margin-bottom: 40px;
+}
+.text-woman-in p {
+	font-size: 1.9rem;
+	line-height: 2.4rem;
+}
+
+/* All icons are putted in pseudo-elements */
+.text-woman p::before {
+	position: absolute;
+	margin-left: -210px;
+}
+
+/* Icons - new positions */
+.hand::before {
+	left: 40%;
+	margin-top: 10px;
+}
+.home::before {
+	left: 43%;
+	margin-top: 5px;
+}
+.tower::before {
+	left: 46%;
+	margin-top: -20px;
+}
+
+.text-woman p::before, .text-man p::before {
+	filter: drop-shadow(2px 2px 2px #155B19);
+	-webkit-filter: drop-shadow(2px 2px 2px #155B19);
+}
+/* Change style after hover icons */
+.text-woman p:hover::before, .text-man p:hover::before {
+	cursor: pointer;
+	filter: drop-shadow(-2px -2px 2px #155B19);
+	-webkit-filter: drop-shadow(-2px -2px 2px #155B19);
+}
+.text-man {
+	margin-top: -575px;
+	margin-left: 180px;
+	font-size: 2.3rem;
+	text-align: left;
+	line-height: 2.4rem;
+}
+.text-man > p {
+	width: 100%;
+	margin-top: -1px;
+	margin-bottom: -3px;
+}
+.text-man p::before {
+	position: absolute;
+	margin-left: -215px;
+}
+.text-man-in {
+	margin-left: 1px;
+	margin-bottom: 40px;
+}
+
+/* Icons - new positions */
+.graduate::before {
+	left: 39%;
+	margin-top: -10px;
+}
+.notebook::before {
+	left: 41.5%;
+	margin-top: -13px;
+}
+.shop::before {
+	left: 41.5%;
+	margin-top: -13px;
+}
+.advertise::before {
+	left: 43%;
+	margin-top: -20px;
+}
+.door::before {
+	left: 42%;
+	margin-top: -17px;
+}
+.star::before {
+	left: 42%;
+	margin-top: -15px;
+}
+
+/* Icons from 2nd section - Woman */
+.hand:hover + .text-woman-in #up-hand, .home:hover + .text-woman-in #up-home, .tower:hover + .text-woman-in #up-tower {
+	display: block;
+}
+/* Icons from 3rd section - Man */
+.graduate:hover + .text-man-in #up-graduate, .notebook:hover + .text-man-in #up-notebook, 
+.shop:hover + .text-man-in #up-shop, .advertise:hover + .text-man-in #up-advertise, 
+.door:hover + .text-man-in #up-door, .star:hover + .text-man-in #up-star {
+	display: block;
+}
+
+.pop-up-text {
+	font-size: 1.9rem;
+}
+/* Size and adjustment of pop-ups */
+/* Pop-ups from 2nd section - Woman */
+#up-hand {
+	margin-top: -320px;
+	margin-left: -200px;
+	width: 350px;
+	height: 180px;
+}
+#up-hand > .pop-up-text {
+	margin: 21px auto 0; 
+	width: 90%;
+}
+#up-home {
+	margin-top: -270px;
+	margin-left: -320px;
+	width: 320px;
+	height: 140px;
+}
+#up-home > .pop-up-text {
+	margin: 10px auto 0 auto; 
+	width: 90%;
+}
+#up-tower {
+	margin-top: -330px;
+	margin-left: -330px;
+	width: 340px;
+	height: 140px;
+}
+#up-tower > .pop-up-text {
+	margin: 20px auto 0 auto; 
+	width: 100%;
+}
+.text-man-in .pop {
+	margin-left: 200px;
+}
+/* Pop-ups from 3rd section - Man */
+#up-graduate {
+	margin-top: -160px;
+	width: 340px;
+	height: 100px;
+}
+#up-graduate > .pop-up-text {
+	margin: 10px auto 0 auto; 
+	width: 90%;
+}
+#up-notebook {
+	margin-top: -240px;
+	width: 360px;
+	height: 130px;
+}
+#up-notebook > .pop-up-text {
+	margin: 5px auto 0 auto; 
+	width: 80%;
+}
+#up-shop {
+	margin-top: -300px;
+	width: 340px;
+	height: 130px;
+}
+#up-shop > .pop-up-text {
+	margin: 15px auto 0 auto; 
+	width: 90%;
+}
+#up-advertise {
+	margin-top: -390px;
+	width: 500px;
+	height: 170px;
+}
+#up-advertise > .pop-up-text {
+	margin: 12px auto 0 auto; 
+	width: 85%;
+}
+#up-door {
+	margin-top: -415px;
+	width: 360px;
+	height: 115px;
+}
+#up-door > .pop-up-text {
+	margin: 5px auto 0 auto; 
+	width: 90%;
+}
+#up-star {
+	margin-top: -460px;
+	width: 340px;
+	height: 100px;
+}
+#up-star > .pop-up-text {
+	margin: 10px auto 0 auto; 
+	width: 90%;
+}
+
+#mailbox-img {
+	margin-top: -180px;
+	margin-left: -100px;
+}
+
+/* Flies in Section: Woman distributing at the end */
+.fly-container {
+	height: 100px;
+	margin-top: 0;
+	width: 400px;
+}
+.gdansk {
+	position: relative;
+	margin-top: 20px;
+	margin-left: 30px;
+	transform: rotate(15deg);
+}
+.sopot {
+	position: relative;
+	margin-top: -35px;
+	margin-left: 200px;
+	transform: rotate(-10deg);
+}
+.gdynia {
+	position: relative;
+	margin-top: -105px;
+	margin-left: 360px;
+}
+
+#man-advertising-img {
+	margin-top: 0;
+	margin-left: -180px;
+}
+
+.speech-man {
+    margin-top: -20px;
+    margin-left: 30px;
+    box-sizing: content-box;
+}
+.speech-man:after {
+	right: 95%;
+    content: "";
+    border-width: 60px 15px 0;
+    transform: rotate(50deg);
+}
+
+/*Text rotation in man's speech bubble */
+#text-rotation-man {
+	margin: 4px;
+}
+
+.speech-project {
+	margin-top: -50px;
+}
+
+.section-woman, .section-man, .section-project {
+	margin-bottom: 100px;
+}
+.section-project {
+	    margin-top: 0px;
+}
+.section-contact {
+    margin-bottom: 200px;
+}
+
+#text-contact p {
+	font-size: 2.5rem;
+	line-height: 50px;
+}
+
+.footer {
+	margin-bottom: 40px;
+}
+
+.footer strong {
+	font-family: Bowlby;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: .1rem;
+}
+
+
+}
+
+/* ////////////////////////////// 4th BREAKPOINT ////////////////////////////// */
+/* ///// Extra large devices (large laptops and desktops, 1200px and up) ////// */
+@media only screen and (min-width: 1200px) {
+
+body {
+	background-image: url('img/rekolnet-footer-2560.png'), radial-gradient(#08955C 40%, #056642);
+}
+
+.section-contact {
+    margin-bottom: 350px;
+}
+
+.footer {
+	width: 40%;
+}
+.footer::before {
+	display: none;
+}
+
+
+}
+
+/* Animations */
+@keyframes shake {
+ 	0%   { transform: translate(1px, 1px) rotate(0deg); }
+ 	10%  { transform: translate(-1px, -2px) rotate(-1deg); }
+ 	20%  { transform: translate(-3px, 0px) rotate(1deg); }
+ 	30%  { transform: translate(3px, 2px) rotate(0deg); }
+ 	40%  { transform: translate(1px, -1px) rotate(1deg); }
+	50%  { transform: translate(-1px, 2px) rotate(-1deg); }
+ 	60%  { transform: translate(-3px, 1px) rotate(0deg); }
+ 	70%  { transform: translate(3px, 1px) rotate(-1deg); }
+ 	80%  { transform: translate(-1px, -1px) rotate(1deg); }
+ 	90%  { transform: translate(1px, 2px) rotate(0deg); }
+ 	100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes shake-speech-bubble-woman {
+ 	0%   { transform: translate(1px, 1px) rotate(-10deg); }
+ 	10%  { transform: translate(-1px, -2px) rotate(-5deg); }
+ 	20%  { transform: translate(-3px, 0px) rotate(-10deg); }
+ 	30%  { transform: translate(3px, 2px) rotate(-5deg); }
+ 	40%  { transform: translate(1px, -1px) rotate(-10deg); }
+	50%  { transform: translate(-1px, 2px) rotate(-5deg); }
+ 	60%  { transform: translate(-3px, 1px) rotate(0deg); }
+ 	70%  { transform: translate(3px, 1px) rotate(-10deg); }
+ 	80%  { transform: translate(-1px, -1px) rotate(-5deg); }
+ 	90%  { transform: translate(1px, 2px) rotate(-7deg); }
+ 	100% { transform: translate(1px, -2px) rotate(-10deg); }
+}
+
+@keyframes shake-speech-bubble-man-project {
+ 	0%   { transform: translate(1px, 1px) rotate(-10deg); }
+ 	10%  { transform: translate(-1px, -2px) rotate(-5deg); }
+ 	20%  { transform: translate(-3px, 0px) rotate(-3deg); }
+ 	30%  { transform: translate(3px, 2px) rotate(-5deg); }
+ 	40%  { transform: translate(1px, -1px) rotate(-3deg); }
+	50%  { transform: translate(-1px, 2px) rotate(-5deg); }
+ 	60%  { transform: translate(-3px, 1px) rotate(0deg); }
+ 	70%  { transform: translate(3px, 1px) rotate(-3deg); }
+ 	80%  { transform: translate(-1px, -1px) rotate(-5deg); }
+ 	90%  { transform: translate(1px, 2px) rotate(-7deg); }
+ 	100% { transform: translate(1px, -2px) rotate(-10deg); }
+}
+
+@keyframes anim-pop {
+ 	0%   { transform: translate(1px, 1px) rotate(0deg); background-color:rgba(255,222,0,.2);}
+ 	20%  { transform: translate(-1px, -2px) rotate(-1deg); }
+	50%  { transform: translate(-1px, 2px) rotate(-1deg); }
+ 	70%  { transform: translate(3px, 1px) rotate(-1deg); }
+ 	90%  { transform: translate(1px, 2px) rotate(0deg); }
+ 	100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+/* AOS is off for devices to max-width 768 */
+@media only screen and (max-width : 768px) {
+[data-aos] {
+    transition-property: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+}
