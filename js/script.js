@@ -1,5 +1,7 @@
+// Initialize Animate On Scroll Library
 AOS.init(); 
 
+// Mobile menu
 function openMenu() {
 	document.querySelector(".nav").style.transform = "translateY(0px)";
 	document.querySelector(".hamburger").style.display = "none";
